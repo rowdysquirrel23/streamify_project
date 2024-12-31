@@ -1,0 +1,30 @@
+<div class="search-container">
+    <h2>Search Movies</h2>
+    
+    <!-- Search by Title -->
+    <input type="text" [(ngModel)]="title" (input)="searchMovies()" placeholder="Search by title">
+    
+    <!-- Search by Genre -->
+    <select [(ngModel)]="genre" (change)="searchMovies()">
+      <option value="">All Genres</option>
+      <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+    </select>
+    
+    <!-- Search by Rating -->
+    <input type="number" [(ngModel)]="rating" (input)="searchMovies()" min="0" max="10" placeholder="Min Rating">
+  
+  </div>
+  
+  <div *ngIf="filteredMovies.length > 0; else noMoviesFound">
+    <ul>
+      <li *ngFor="let movie of filteredMovies">
+        <h3>{{ movie.title }} ({{ movie.rating }})</h3>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Actors:</strong> {{ movie.actors.join(', ') }}</p>
+      </li>
+    </ul>
+  </div>
+  
+  <ng-template #noMoviesFound>
+    <p>No movies found matching your criteria.</p>
+  </ng-template>

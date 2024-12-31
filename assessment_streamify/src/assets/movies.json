@@ -1,0 +1,74 @@
+{
+    "movies": [
+    {
+      "id": 1,
+      "title": "The Dark Knight",
+      "rating": 9.0,
+      "genre": "Action",
+      "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]
+    },
+    {
+      "id": 2,
+      "title": "Inception",
+      "rating": 8.8,
+      "genre": "Sci-Fi",
+      "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"]
+    },
+    {
+      "id": 3,
+      "title": "The Godfather",
+      "rating": 9.2,
+      "genre": "Crime",
+      "actors": ["Marlon Brando", "Al Pacino", "James Caan"]
+    },
+    {
+      "id": 4,
+      "title": "The Shawshank Redemption",
+      "rating": 9.3,
+      "genre": "Drama",
+      "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"]
+    },
+    {
+      "id": 5,
+      "title": "Schindler's List",
+      "rating": 9.0,
+      "genre": "History",
+      "actors": ["Liam Neeson", "Ben Kingsley", "Ralph Fiennes"]
+    },
+    {
+      "id": 6,
+      "title": "Forrest Gump",
+      "rating": 8.8,
+      "genre": "Drama",
+      "actors": ["Tom Hanks", "Robin Wright", "Gary Sinise"]
+    },
+    {
+      "id": 7,
+      "title": "The Matrix",
+      "rating": 8.7,
+      "genre": "Action",
+      "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"]
+    },
+    {
+      "id": 8,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "rating": 8.8,
+      "genre": "Fantasy",
+      "actors": ["Elijah Wood", "Ian McKellen", "Viggo Mortensen"]
+    },
+    {
+      "id": 9,
+      "title": "Gladiator",
+      "rating": 8.5,
+      "genre": "Action",
+      "actors": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen"]
+    },
+    {
+      "id": 10,
+      "title": "Titanic",
+      "rating": 7.8,
+      "genre": "Romance",
+      "actors": ["Leonardo DiCaprio", "Kate Winslet", "Billy Zane"]
+    }
+  ]
+}

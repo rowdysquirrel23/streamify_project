@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Movie Search</h1>
+  
+    <!-- Search Input -->
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search movies..."
+        [(ngModel)]="searchTerm"
+        (input)="searchMovies()"
+      />
+  
+      <select [(ngModel)]="searchCategory" (change)="searchMovies()">
+        <option value="title">Title</option>
+        <option value="genre">Genre</option>
+        <option value="rating">Rating</option>
+      </select>
+    </div>
+  
+    <!-- Movie List -->
+    <div *ngFor="let movie of filteredMovies" class="movie-card">
+      <h2>{{ movie.title }}</h2>
+      <p><strong>Rating:</strong> {{ movie.rating }}</p>
+      <p><strong>Genre:</strong> {{ movie.genre }}</p>
+      <p><strong>Actors:</strong> {{ movie.actors.join(', ') }}</p>
+    </div>
+  </div>
