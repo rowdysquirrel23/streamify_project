@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-
+//locate the dummy api/JSON file
   private jsonUrl = 'assets/movies.json';
 
   constructor(private http: HttpClient) {}
