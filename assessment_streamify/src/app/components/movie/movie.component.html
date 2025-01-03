@@ -1,40 +1,40 @@
+<div class="container">
+  <h1>Movie Search</h1>
 
-  <div class="container">
-    <h1>Movie Search</h1>
-  
-    <!-- Allows users to manually search for a movie -->
-    <div class="search-bar">
-      <input type="text" placeholder="Search movies..." [(ngModel)]="searchTerm" (input)="searchMovies()"/>
-    </div>
-  
-    <!-- Dropdown for search by title-->
-    <div class="search-bar">
-      <label for="title-dropdown">Search by Title:</label>
-      <select id="title-dropdown" [(ngModel)]="selectedTitle" (change)="searchMovies()">
-        <option value="">Select Title</option>
-        <option *ngFor="let title of allTitles" [value]="title">{{ title }}</option>
-      </select>
-    </div>
-  
-    <!-- Dropdown for search by genre -->
-    <div class="search-bar">
-      <label for="genre-dropdown">Search by Genre:</label>
-      <select id="genre-dropdown" [(ngModel)]="selectedGenre" (change)="searchMovies()">
-        <option value="">Select Genre</option>
-        <option *ngFor="let genre of allGenres" [value]="genre">{{ genre }}</option>
-      </select>
-    </div>
-  
-    <!--  Dropdown for search by rating -->
-    <div class="search-bar">
-      <label for="rating-dropdown">Sort by Rating:</label>
-      <select id="rating-dropdown" [(ngModel)]="selectedRating" (change)="searchMovies()">
-        <option value="highest">Highest to Lowest</option>
-        <option value="lowest">Lowest to Highest</option>
-      </select>
-    </div>
-  
-    <!-- Movie List -->
+      <!-- Allows users to manually search for a movie -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search movies..." [(ngModel)]="searchTerm" (input)="searchMovies()"/>
+      </div>
+    
+      <!-- Dropdown for search by title-->
+      <div class="search-bar">
+        <label for="title-dropdown">Search by Title:</label>
+        <select id="title-dropdown" [(ngModel)]="selectedTitle" (change)="searchMovies()">
+          <option value="">Select Title</option>
+          <option *ngFor="let title of allTitles" [value]="title">{{ title }}</option>
+        </select>
+      </div>
+    
+      <!-- Dropdown for search by genre -->
+      <div class="search-bar">
+        <label for="genre-dropdown">Search by Genre:</label>
+        <select id="genre-dropdown" [(ngModel)]="selectedGenre" (change)="searchMovies()">
+          <option value="">Select Genre</option>
+          <option *ngFor="let genre of allGenres" [value]="genre">{{ genre }}</option>
+        </select>
+      </div>
+    
+      <!--  Dropdown for search by rating -->
+      <div class="search-bar">
+        <label for="rating-dropdown">Sort by Rating:</label>
+        <select id="rating-dropdown" [(ngModel)]="selectedRating" (change)="searchMovies()">
+          <option value="highest">Highest to Lowest</option>
+          <option value="lowest">Lowest to Highest</option>
+        </select>
+      </div>
+
+  <!-- Movie List -->
+  <div *ngIf="hasSearched && filteredMovies.length > 0">
     <div *ngFor="let movie of filteredMovies" class="movie-card">
       <h2>{{ movie.title }}</h2>
       <p><strong>Rating:</strong> {{ movie.rating }}</p>
@@ -42,3 +42,9 @@
       <p><strong>Actors:</strong> {{ movie.actors.join(', ') }}</p>
     </div>
   </div>
+
+  <!-- No Results Message -->
+  <div *ngIf="hasSearched && filteredMovies.length === 0" class="no-results">
+    <p>No movies found. Try a different search.</p>
+  </div>
+</div>
